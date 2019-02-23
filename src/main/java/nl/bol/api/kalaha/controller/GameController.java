@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.validation.Valid;
 
 
 @RestController
+@EnableSwagger2
 public class GameController {
 
     @Autowired
@@ -26,12 +28,12 @@ public class GameController {
     @Autowired
     private PlayerNumberValidator playerNumberValidator;
 
-    @RequestMapping(path = "/newGame", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(path = "/kalaha/newGame", method = RequestMethod.GET, produces = "application/json")
     public GameBoard newGame() {
         return gameService.initNewGame();
     }
 
-    @RequestMapping(path = "/player1", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(path = "/kalaha/player1", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<?> player1Move(@Valid @RequestBody Player player, Errors errors) {
 
         //TODO check for Game win if all the pits of Player 1 is 0 then Player 2 win the Game to check this
@@ -49,7 +51,7 @@ public class GameController {
         return new ResponseEntity<>(gameBoard, HttpStatus.OK);
     }
 
-    @RequestMapping(path = "/player2", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(path = "/kalaha/player2", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<?> player2Move(@Valid @RequestBody Player player, Errors errors) {
 
         //TODO check for Game win if all the pits of Player 2 is 0 then Player 1 win the Game
