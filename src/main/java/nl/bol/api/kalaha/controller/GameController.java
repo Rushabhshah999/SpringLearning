@@ -20,7 +20,7 @@ import javax.validation.Valid;
 
 @RestController
 @EnableSwagger2
-public class GameController {
+class GameController {
 
     @Autowired
     private GameService gameService;

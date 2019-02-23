@@ -43,8 +43,7 @@ public class GameServiceTest {
     @Test
     public void GivenPlayer1WhenInputValidNumberButPitThenReturnGrid() {
 
-        GameBoard gameBoard = gameService.initNewGame();
-        gameBoard = gameService.player1Move(5);
+        GameBoard gameBoard = gameService.player1Move(5);
         assertEquals(gameBoard.board[0], 0);
         assertEquals(gameBoard.board[5], 0);
         assertEquals(gameBoard.board[7], 1);
@@ -95,8 +94,7 @@ public class GameServiceTest {
     @Test
     public void GivenPlayer2WhenInputValidNumberButPitThenReturnGrid() {
 
-        GameBoard gameBoard = gameService.initNewGame();
-        gameBoard = gameService.player2Move(9);
+        GameBoard gameBoard = gameService.player2Move(9);
         assertEquals(gameBoard.board[0], 1);
         assertEquals(gameBoard.board[1], 7);
         assertEquals(gameBoard.board[9], 0);

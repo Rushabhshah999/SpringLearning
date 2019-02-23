@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Import({SpringFoxConfig.class,GameService.class, GlobalExceptionHandler.class, PlayerNumberValidator.class})
-public class Application extends SpringBootServletInitializer {
+class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

@@ -36,7 +36,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         StringBuilder builder = new StringBuilder();
         builder.append(ex.getContentType());
         builder.append(" media type is not supported. Supported media types are ");
-        ex.getSupportedMediaTypes().forEach(t -> builder.append(t + ", "));
+        ex.getSupportedMediaTypes().forEach(t -> builder.append(t).append(", "));
 
         ApiError apiError = ApiError.builder()
                 .status(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
